@@ -1,13 +1,28 @@
 'use strict';
 
 const http = require('http');
+const version = require('./package.json')['version'];
+
+exports.MESSAGE = process.env.MESSAGE || 'unknown';
 
 let server = http.createServer(function(req, res) {
-  let message = process.env.MESSAGE || 'unknown';
-  res.end(JSON.stringify({version: '4.0.0', message: message }));
+  let message = exports.MESSAGE;
+  res.end(JSON.stringify({ version, message }));
 });
 
+exports.listen = function listen(port) {
+  return new Promise(resolve => {
+    server.listen(port, () => {
+      return resolve(server.address());
+    });
+  });
+};
 
-let port = process.env.PORT || 8080;
-server.listen(port);
-
+exports.close = function close() {
+  return new Promise(function(resolve, reject) {
+    server.close(err => {
+      if (err) return reject();
+      return resolve();
+    });
+  });
+};

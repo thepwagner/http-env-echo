@@ -1,8 +1,18 @@
-FROM node:4.1-slim
+FROM node:4.3-slim
 
-ADD server.js /server.js
+RUN useradd -g daemon -m -d /tmp app \
+  && mkdir /app \
+  && chown app:daemon /app
+
+WORKDIR /app
+
+COPY package.json /app/package.json
+RUN npm install
+
+COPY / /app/
 
 ENV MESSAGE "hello world"
 
-CMD [ "node", "/server.js" ]
+USER app
+CMD [ "node", "/app/start.js" ]
 

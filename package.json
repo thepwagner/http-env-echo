@@ -1,0 +1,34 @@
+{
+  "name": "http-env-echo",
+  "version": "4.0.0",
+  "description": "Simple node project for pipeline testing.",
+  "main": "server.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint .",
+    "test": "./node_modules/.bin/_mocha --recursive test/",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thepwagner/http-env-echo.git"
+  },
+  "author": "npm@mycloudand.me",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thepwagner/http-env-echo/issues"
+  },
+  "homepage": "https://github.com/thepwagner/http-env-echo#readme",
+  "devDependencies": {
+    "assert": "^1.3.0",
+    "co-mocha": "^1.1.2",
+    "eslint": "^1.10.3",
+    "eslint-config-pebble": "^1.2.0",
+    "eslint-plugin-standard": "^1.3.2",
+    "mocha": "^2.4.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "pebble"
+    ]
+  }
+}
