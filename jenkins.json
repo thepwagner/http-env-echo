@@ -7,7 +7,7 @@
   ],
   "docker": {
     "pipeline": [
-      "develop",
+      "!develop",
       "staging",
       "production"
     ]
