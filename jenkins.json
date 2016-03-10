@@ -5,6 +5,12 @@
     "4.3",
     "4.4"
   ],
-  "docker": {}
+  "docker": {
+    "pipeline": [
+      "develop",
+      "staging",
+      "production"
+    ]
+  }
 }
 
