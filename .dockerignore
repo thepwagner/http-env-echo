@@ -1,4 +1,5 @@
 .git
 .idea
+build
 node_modules
 
