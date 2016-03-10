@@ -1,4 +1,4 @@
-FROM node:4.3-slim
+FROM node:4.4-slim
 
 RUN useradd -g daemon -m -d /tmp app \
   && mkdir /app \
