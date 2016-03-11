@@ -5,12 +5,26 @@
     "4.3",
     "4.4"
   ],
-  "docker": {
+  "docker": {},
+  "flotilla": {
     "pipeline": [
       "!develop",
-      "staging",
-      "production"
-    ]
+      "staging"
+    ],
+    "defaults": {
+      "REGIONS": ["us-east-1"],
+      "DOCKER_PORT_80": 8080,
+      "INSTANCE_TYPE": "t2.nano",
+      "INSTANCE_MIN": "2",
+      "INSTANCE_MAX": "2",
+      "HEALTH_CHECK": "HTTP:80/"
+    },
+    "develop": {
+      "MESSAGE": "hello develop"
+    },
+    "staging": {
+      "MESSAGE": "hello staging",
+    }
   }
 }
 
