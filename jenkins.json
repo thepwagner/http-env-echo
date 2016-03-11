@@ -23,7 +23,7 @@
       "MESSAGE": "hello develop"
     },
     "staging": {
-      "MESSAGE": "hello staging",
+      "MESSAGE": "hello staging"
     }
   }
 }
