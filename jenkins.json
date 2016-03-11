@@ -20,7 +20,7 @@
       "HEALTH_CHECK": "HTTP:80/"
     },
     "develop": {
-      "MESSAGE": "hello develop"
+      "MESSAGE": "hello develop demo demo demo"
     },
     "staging": {
       "MESSAGE": "hello staging"
